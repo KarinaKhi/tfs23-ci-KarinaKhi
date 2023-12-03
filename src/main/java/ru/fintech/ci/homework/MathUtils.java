@@ -60,7 +60,6 @@ public class MathUtils {
     /**
      * Посчитать наименьшее общее кратное двух чисел
      */
-    //МЕНЯТЬ НЕЛЬЗЯ
     public static int Calculate_LCM(int a, int b) throws IllegalArgumentException {
         if (a <= 0 || b <= 0) {
             throw new IllegalArgumentException("Both numbers must be positive integers");
@@ -69,7 +68,6 @@ public class MathUtils {
         return (a * b) / gcd;
     }
 
-    //МЕНЯТЬ НЕЛЬЗЯ
     private static int Calculate_GCD(int a, int b) {
         if (b == 0) {
             return a;
