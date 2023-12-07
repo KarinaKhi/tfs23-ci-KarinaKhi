@@ -32,7 +32,7 @@ jobs:
         uses: nikitasavinov/checkstyle-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          checkstyle_config: ${{ github.workspace }}/**/config/checkstyle/checkstyle.xml
+          checkstyle_config: config/checkstyle/checkstyle.xml
           reporter: 'github-pr-check'
           tool_name: 'testtool'
 
