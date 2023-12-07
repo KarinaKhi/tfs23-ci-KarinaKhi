@@ -34,10 +34,11 @@ jobs:
       - name: Run check style
         uses: nikitasavinov/checkstyle-action@master
         with:
-          REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           checkstyle_config: config/checkstyle/checkstyle.xml
           reporter: 'github-pr-check'
+          fail_on_error: true
+          level: 'error'
 
   coverage:
     runs-on: ubuntu-latest
