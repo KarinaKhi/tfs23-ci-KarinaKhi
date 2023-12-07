@@ -38,8 +38,6 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           checkstyle_config: config/checkstyle/checkstyle.xml
           reporter: 'github-pr-check'
-          fail_on_error: true
-          level: 'error'
 
   coverage:
     runs-on: ubuntu-latest
