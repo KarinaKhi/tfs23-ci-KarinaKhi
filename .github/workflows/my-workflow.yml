@@ -21,6 +21,11 @@ jobs:
       - name: Build project
         run: gradle clean build
 
+      - uses: actions/upload-artifact@master
+        with:
+          name: build-jacoco
+          path: build/jacoco
+
   checkstyle:
     runs-on: ubuntu-latest
     needs: build
@@ -49,10 +54,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - uses: actions/download-artifact@master
+        with:
+          name: build-jacoco
+          path: build/jacoco
       - name: Run Coverage
         run: |
           chmod +x gradlew
-          ./gradlew test jacocoTestReport
+          ./gradlew jacocoTestReport
 
       - name: Add coverage to PR
         id: jacoco
