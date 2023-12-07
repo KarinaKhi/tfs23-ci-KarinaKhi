@@ -37,7 +37,6 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           checkstyle_config: config/checkstyle/checkstyle.xml
           reporter: 'github-pr-check'
-          tool_name: 'testtool'
 
   coverage:
     runs-on: ubuntu-latest
@@ -62,4 +61,6 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           min-coverage-overall: 40
           min-coverage-changed-files: 60
+          update-comment: true
+          title: jacoco-report
 
